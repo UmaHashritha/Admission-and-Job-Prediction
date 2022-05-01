@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Admission Prediction</title>
+</head>
+<body>
+    <div class="tabcontainer">
+    <form action="{{ url_for('ad_predict')}}"method="post">
+        
+        <h1 class="box-head" >Admission Prediction</h1>
+           
+            <input class="text-box" type="text" name="GRE Score" placeholder="GRE Score" required="required" /><br><br>
+            <input class="text-box" type="text" name="TOFEL Score" placeholder="TOFEL Score" required="required" /><br><br>
+            <input class="text-box" type="text" name="University Rating" placeholder="University Rating" required="required" /><br><br>
+            <input class="text-box" type="float" name="SOP" placeholder="Statement Of Purpose" required="required" /><br><br>
+            <input class="text-box" type="float" name="LOR" placeholder="Letter Of Reccomendation" required="required" /><br><br>
+            <input class="text-box" type="float" name="CGPA" placeholder="CGPA" required="required" /><br><br>
+            <input class="text-box" type="text" name="Research" placeholder="Research" required="required" /><br><br>
+        
+        
+            <button class="btn btn-primary btn-block btn-large" id="predict-btn">Predict</button>
+      </form> 
+      <div class="pre-txt">
+        <span class="tt"><h1>{{ prediction_text }}</h1></span>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Job Prediction</title>
+</head>
+<div class="jobtabcontainer">
+    <form action="{{ url_for('jb_predict')}}"method="post">
+        
+            <h1 class="box-head">Job Prediction</h1>
+           
+            <select class="teamForm" id="teamDropdownSelector" type="text" name="teamDropdown" placeholder="Select Your Gender" required="required">
+                <option disabled selected>Select your Gender</option>
+                <option id="Female" value="Female">Female</option>
+                <option id="Male" value="Male">Male</option>
+           </select><br><br>
+           <select class="teamForms" id="teamDropdown" type="text" name="teamDropdowns" placeholder="Select Your Stream" required="required">
+            <option disabled selected>Select your Stream</option>
+            <option id="Information Technology" value="Information Technology">Information Technology </option>
+            <option id="Computer Science" value="Computer Science">Computer Science</option>
+            <option id="Electronics And Communication" value="Electronics And Communication">Electronics And Communication</option>
+            <option id="Electrical" value="Electrical">Electrical</option>
+            <option id="Mechanical" value="Mechanical">Mechanical</option>
+            <option id="Civil" value="Civil">Civil</option>
+          </select><br><br>
+            <input type="text" name="No of Internships done" placeholder="No of Internships done" required="required" /><br><br>
+            <input type="float" name="CGPA" placeholder="CGPA" required="required" /><br><br>
+            <input type="float" name="Hostel" placeholder="Hostel Resident or not" required="required" /><p>Enter 1 if you are hostel resident else Enter 0 </p>
+            <input type="text" name="History Of Backlogs" placeholder="History Of Backlogs" required="required" /><br><br>
+        
+        
+            <button class="btn btn-primary btn-block btn-large" id="predict-btn">Predict</button>
+      </form> 
+      <div class="pre-txt">
+        <span class="tt"><h1>{{ prediction_text }}</h1></span>
+      </div>
+    </div>
+</body>
+</html>
